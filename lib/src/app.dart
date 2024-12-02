@@ -1,4 +1,5 @@
 import 'package:ejemplo5/src/menu/menu.dart';
+import 'package:ejemplo5/src/pages/login.dart';
 import 'package:ejemplo5/src/routes/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       routes: getRoutes(),
       onGenerateRoute: (RouteSettings settings) {
         //log('Ruta llamada:${settings.name}');
-        return MaterialPageRoute(builder: (BuildContext context) => MenuPage());
+        return MaterialPageRoute(
+            builder: (BuildContext context) => loginPage());
       },
     );
   }

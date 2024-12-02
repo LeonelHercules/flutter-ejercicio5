@@ -1,14 +1,18 @@
 import 'package:ejemplo5/src/const/api_constanst.dart';
+import 'package:ejemplo5/src/pages/consulta.dart';
 import 'package:flutter/material.dart';
 
 class MenuPage extends StatefulWidget {
-  const MenuPage({super.key});
+  final String token;
+  const MenuPage({super.key, required this.token});
 
   @override
   State<MenuPage> createState() => _MenuPageState();
 }
 
 class _MenuPageState extends State<MenuPage> {
+  get token => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,9 +41,13 @@ class _MenuPageState extends State<MenuPage> {
                 onPressed: () {
                   //Navigator.push(context,
                   //    MaterialPageRoute(builder: (context) => operaciones()));
-                  Navigator.pushNamed(context, 'clima2');
+                  //Navigator.pushNamed(context, 'consultas');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Consulta(token: widget.token)));
                 },
-                child: const Text('consultas')),
+                child: const Text('Clientes')),
           ],
         ),
       ),
